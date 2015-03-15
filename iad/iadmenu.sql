@@ -35,7 +35,7 @@ variable category_menu varchar2(30)
 declare
 begin
   select decode (&acc_choice, 1, 'iad/instance.sql',
-                              2, 'iad/database.sql',
+                              2, decode(&1, '12.1', 'iad/database121.sql', 'iad/database.sql'),
                               3, 'iad/nondefparams.sql',
                               4, 'iad/spparams.sql',
                               5, 'iad/memory.sql',
