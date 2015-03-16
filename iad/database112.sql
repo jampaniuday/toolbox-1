@@ -2,9 +2,9 @@
 
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
-Tested on:      12.1.0.2.0
+Tested on:      11.2.0.4.0
 Last date:      2015-03-16
-File name:      database121.sql
+File name:      database112.sql
 
 Description:
 Oradistrict Toolbox - Database report.
@@ -20,10 +20,6 @@ select open_mode, controlfile_type, controlfile_created, protection_mode, protec
   from v$database;
 
 select database_role, switchover_status, dataguard_broker, force_logging, flashback_on
-  from v$database;
-
--- 12.1
-select cdb, con_id, pending_role_change_tasks, con_dbid
   from v$database;
 prompt 
 prompt (hit enter to continue)

@@ -2,12 +2,12 @@
 
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
-Tested on:      12.1.0.2.0
-Last date:      2015-03-08
-File name:      instance.sql
+Tested on:      11.2.0.4.0, 12.1.0.2.0
+Last date:      2015-03-16
+File name:      instancefmt.sql
 
 Description:
-Oradistrict Toolbox - Instance report.
+Oradistrict Toolbox - Instance report - reformatting output.
 
 */
 
@@ -32,18 +32,3 @@ col con_id for 99999999999 hea 'Container ID'
 col instance_mode for a15 hea 'Instance mode'
 col edition for a10 hea 'DB edition'
 
-select instance_number, instance_name, host_name, startup_time,
-       floor(sysdate - startup_time) up_for_days
-  from v$instance;
-
-select status, version, logins, thread#, archiver, log_switch_wait, shutdown_pending
-  from v$instance;
-
-select instance_role, active_state, blocked, con_id, instance_mode, edition
-  from v$instance;
-
-prompt 
-prompt (hit enter to continue)
-pause
-
-start iad/iadmenu.sql
