@@ -2,9 +2,9 @@
 
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
-Tested on:      11.2.0.4.0
+Tested on:      12.1.0.2.0
 Last date:      2015-03-16
-File name:      database112.sql
+File name:      database121.sql
 
 Description:
 Oradistrict Toolbox - Database report.
@@ -37,7 +37,14 @@ select 'Supplemental log data all columns', supplemental_log_data_all from v$dat
  union
 select 'Supplemental log data procedural', supplemental_log_data_pl from v$database)
  order by 1;
-prompt 
+
+-- 12
+select cdb, con_id, pending_role_change_tasks, con_dbid
+  from v$database;
+
+select force_full_db_caching
+  from v$database;
+prompt
 prompt (hit enter to continue)
 pause
 

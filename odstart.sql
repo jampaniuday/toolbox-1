@@ -20,7 +20,7 @@ set pagesize 250
 set linesize 92
 col current_date for a23 hea 'Current date and time'
 col current_version for a17 hea 'Detected version'
-col release new_value col_version for a7 hea 'Release'
+col release new_value col_version for a8 hea 'Release'
 
 alter session set nls_date_format = 'YYYY-MM-DD HH24:MI:SS';
 alter session set nls_timestamp_format = 'YYYY-MM-DD HH24:MI:SS.FF';
@@ -45,7 +45,7 @@ prompt --------@: patrycjusz\\@//oradistrict.com --please remove //\\
 prompt *******************************************************************************************
 set heading on
 select sysdate current_date, :v_dbversion current_version,
-       substr(:v_dbversion, 1, instr(:v_dbversion, '.', 1, 2) - 1) release
+       substr(:v_dbversion, 1, instr(:v_dbversion, '.', 1, 4) - 1) release
        -- , case when :v_dbversion > '12.0.0.0.0' then '12.1' else 'lower than 12c' end testcol
   from dual;
 set heading off
@@ -56,9 +56,9 @@ prompt
 prompt Chose category:
 prompt 1)  instance and database (parameters and status)
 prompt 2)  sessions and processes
-prompt 3)  security (users, privileges, profiles)
-prompt 4)  redo log (with archived redo log)
-prompt 5)  tablespaces (with data files and temp files)
+--prompt 3)  security (users, privileges, profiles)
+--prompt 4)  redo log (with archived redo log)
+--prompt 5)  tablespaces (with data files and temp files)
 prompt 
 prompt 0)  exit (*)
 prompt 
@@ -71,7 +71,7 @@ variable category_menu varchar2(30)
 declare
 begin
   select decode (&acc_choice, 1, 'iad/iadmenu.sql',
-                              2, '',
+                              2, 'sap/sapmenu.sql',
                               0, 'ex.sql',
                                  'ex.sql')
     into :category_menu
