@@ -18,6 +18,7 @@ prompt Chose report:
 prompt 
 prompt 1)  instance status
 prompt 2)  database status
+prompt 3)  database properties
 --prompt 3)  non-default parameters (v$parameter)
 --prompt 4)  specified parameters (v$sparameter)
 --prompt 5)  memory (sga/pga/buffers)
@@ -46,6 +47,7 @@ begin
          2, decode ('&1', '12.1.0.2', 'iad/database12102.sql',
                     '&1', '12.1.0.1', 'iad/database12101.sql',
                                       'iad/database112.sql'),
+         3, 'iad/databaseproperties.sql',
          0, 'odstart.sql',
          'odstart.sql')
     into :category_menu

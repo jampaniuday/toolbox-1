@@ -18,6 +18,7 @@ set feedback off
 set heading off
 set pagesize 250
 set linesize 92
+set recsep off
 col current_date for a23 hea 'Current date and time'
 col current_version for a17 hea 'Detected version'
 col release new_value col_version for a8 hea 'Release'
@@ -56,6 +57,7 @@ prompt
 prompt Chose category:
 prompt 1)  instance and database (parameters and status)
 prompt 2)  sessions and processes
+prompt 3)  multitenant (container database)
 --prompt 3)  security (users, privileges, profiles)
 --prompt 4)  redo log (with archived redo log)
 --prompt 5)  tablespaces (with data files and temp files)
@@ -72,6 +74,7 @@ declare
 begin
   select decode (&acc_choice, 1, 'iad/iadmenu.sql',
                               2, 'sap/sapmenu.sql',
+                              3, 'mt/mtmenu.sql',
                               0, 'ex.sql',
                                  'ex.sql')
     into :category_menu
