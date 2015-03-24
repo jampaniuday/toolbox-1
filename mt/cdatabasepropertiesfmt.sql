@@ -12,8 +12,10 @@ Oradistrict Toolbox - database properties list - for all active containers or lo
 */
 
 set heading on
+ttitle off
+clear breaks
 
 col property_name for a32 hea 'Property Name'
 col property_value for a36 hea 'Property Value'
 col con_id for 99999 hea 'ConID'
-col pdb_name for a16 hea 'Container Name'
+col pdb_name new_value col_pdb_name for a16 hea 'Container Name' noprint

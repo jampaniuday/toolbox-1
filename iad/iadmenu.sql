@@ -19,8 +19,8 @@ prompt
 prompt 1)  instance status
 prompt 2)  database status
 prompt 3)  database properties
+prompt 4)  specified parameter
 --prompt 3)  non-default parameters (v$parameter)
---prompt 4)  specified parameters (v$sparameter)
 --prompt 5)  memory (sga/pga/buffers)
 --prompt 6)  long session operations (v$session_longops)
 --prompt 7)  
@@ -29,7 +29,7 @@ prompt 0)  back to previous menu (*)
 prompt 
 prompt Default value always with (*)
 
-accept acc_choice number default 0 prompt "Input your choice: "
+accept acc_choice number default 0 prompt 'Input your choice: '
 
 set termout off
 variable category_menu varchar2(40)
@@ -48,6 +48,8 @@ begin
                     '&1', '12.1.0.1', 'iad/database12101.sql',
                                       'iad/database112.sql'),
          3, 'iad/databaseproperties.sql',
+         4, decode (substr('&1', 1, 4), '12.1', 'iad/parameter121.sql',
+                                                'iad/parameter112.sql'),
          0, 'odstart.sql',
          'odstart.sql')
     into :category_menu

@@ -57,7 +57,8 @@ prompt
 prompt Chose category:
 prompt 1)  instance and database (parameters and status)
 prompt 2)  sessions and processes
-prompt 3)  multitenant (container database)
+prompt 3)  tablespaces (with data and temp files)
+prompt 4)  multitenant (container database)
 --prompt 3)  security (users, privileges, profiles)
 --prompt 4)  redo log (with archived redo log)
 --prompt 5)  tablespaces (with data files and temp files)
@@ -66,7 +67,7 @@ prompt 0)  exit (*)
 prompt 
 prompt Default value always with (*)
 
-accept acc_choice number default 0 prompt "Input your choice: "
+accept acc_choice number default 0 prompt 'Input your choice: '
 
 set termout off
 variable category_menu varchar2(30)
@@ -74,7 +75,8 @@ declare
 begin
   select decode (&acc_choice, 1, 'iad/iadmenu.sql',
                               2, 'sap/sapmenu.sql',
-                              3, 'mt/mtmenu.sql',
+                              3, 'ts/tsmenu.sql',
+                              4, 'mt/mtmenu.sql',
                               0, 'ex.sql',
                                  'ex.sql')
     into :category_menu
