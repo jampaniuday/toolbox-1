@@ -22,15 +22,16 @@ set recsep off
 col current_date for a23 hea 'Current date and time'
 col current_version for a17 hea 'Detected version'
 col release new_value col_version for a8 hea 'Release'
+col db_unique_name for a20 hea 'Database unique name'
 
 alter session set nls_date_format = 'YYYY-MM-DD HH24:MI:SS';
 alter session set nls_timestamp_format = 'YYYY-MM-DD HH24:MI:SS.FF';
 alter session set nls_timestamp_tz_format = 'YYYY-MM-DD HH24:MI:SS.FF TZH:TZM';
 variable v_dbversion varchar2(17)
 begin
-  select trim(version)
+  select trim(max(version))
     into :v_dbversion
-    from v$instance;
+    from product_component_version;
 end;
 /
 
@@ -46,7 +47,8 @@ prompt --------@: patrycjusz\\@//oradistrict.com --please remove //\\
 prompt *******************************************************************************************
 set heading on
 select sysdate current_date, :v_dbversion current_version,
-       substr(:v_dbversion, 1, instr(:v_dbversion, '.', 1, 4) - 1) release
+       substr(:v_dbversion, 1, instr(:v_dbversion, '.', 1, 4) - 1) release,
+       sys_context('userenv','db_unique_name') db_unique_name
        -- , case when :v_dbversion > '12.0.0.0.0' then '12.1' else 'lower than 12c' end testcol
   from dual;
 set heading off
