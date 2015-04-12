@@ -3,7 +3,7 @@
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
 Tested on:      12.1.0.2.0
-Last date:      2015-03-25
+Last date:      2015-04-12
 File name:      domenu.sql
 
 Description:
@@ -30,8 +30,8 @@ variable category_menu varchar2(40)
 declare
 begin
   select decode (&acc_choice,
-         1, decode (substr('&1', 1, 2), '12', 'do/objects121.sql',
-                                              'do/objects112.sql'),
+         1, 'do/object112.sql',
+         2, 'do/constraint112.sql',
          0, 'odstart.sql',
          'odstart.sql')
     into :category_menu

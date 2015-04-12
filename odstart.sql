@@ -2,8 +2,8 @@
 
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
-Tested on:      12.1.0.2.0
-Last date:      2015-03-08
+Tested on:      11.2.0.4.0, 12.1.0.2.0
+Last date:      2015-04-12
 File name:      odstart.sql
 
 Description:
@@ -14,7 +14,7 @@ Oradistrict Toolbox - Startup script
 clear screen
 
 set termout off
-set feedback off
+set feedback 20
 set heading off
 set pagesize 250
 set linesize 92
@@ -41,7 +41,7 @@ prompt *************************************************************************
 prompt Welcome in Oradistrict Toolbox: Viewer
 prompt
 prompt --Version: 1.0
-prompt Last date: 2015-03-08
+prompt Last date: 2015-04-12
 prompt ---Author: Patrycjusz Konkol
 prompt --------@: patrycjusz\\@//oradistrict.com --please remove //\\
 prompt *******************************************************************************************
@@ -60,7 +60,8 @@ prompt Chose category:
 prompt 1)  instance and database (parameters and status)
 prompt 2)  sessions and processes
 prompt 3)  tablespaces (with data and temp files)
-prompt 4)  multitenant (container database)
+prompt 4)  database objects
+prompt 9)  multitenant (container database)
 --prompt 3)  security (users, privileges, profiles)
 --prompt 4)  redo log (with archived redo log)
 --prompt 5)  tablespaces (with data files and temp files)
@@ -78,7 +79,8 @@ begin
   select decode (&acc_choice, 1, 'iad/iadmenu.sql',
                               2, 'sap/sapmenu.sql',
                               3, 'ts/tsmenu.sql',
-                              4, 'mt/mtmenu.sql',
+                              4, 'do/domenu.sql',
+                              9, 'mt/mtmenu.sql',
                               0, 'ex.sql',
                                  'ex.sql')
     into :category_menu

@@ -3,7 +3,7 @@
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
 Tested on:      11.2.0.4.0, 12.1.0.2.0
-Last date:      2015-03-16
+Last date:      2015-04-12
 File name:      iadmenu.sql
 
 Description:
@@ -44,10 +44,15 @@ begin
   select decode (&acc_choice,
          1, decode (substr('&1', 1, 4), '12.1', 'iad/instance121.sql',
                                                 'iad/instance112.sql'),
-         2, decode ('&1', '12.1.0.2', 'iad/database12102.sql',
-                    '&1', '12.1.0.1', 'iad/database12101.sql',
-                                      'iad/database112.sql'),
-         3, 'iad/databaseproperties.sql',
+         2, decode ('&1', '12.1.0.1', 'iad/database12101.sql',
+                    decode (substr('&1', 1, 2),
+                            '11', 'iad/database112.sql',
+                            '12', 'iad/database12102.sql',
+                            'iad/database112.sql')
+                   ),
+         3, 'iad/databaseproperties112.sql',
+--         3, decode (substr('&1', 1, 4), '12.1', 'mt/cdatabaseproperties121.sql',
+--                                                'iad/databaseproperties112.sql'),
          4, decode (substr('&1', 1, 4), '12.1', 'iad/parameter121.sql',
                                                 'iad/parameter112.sql'),
          0, 'odstart.sql',

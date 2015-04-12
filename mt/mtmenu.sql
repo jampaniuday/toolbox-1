@@ -3,7 +3,7 @@
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
 Tested on:      12.1.0.2.0
-Last date:      2015-03-23
+Last date:      2015-04-12
 File name:      mtmenu.sql
 
 Description:
@@ -18,6 +18,7 @@ prompt Chose report:
 prompt 
 prompt 1)  containers
 prompt 2)  containers database properties
+prompt 3)  containers (status and logging)
 prompt 
 prompt 0)  back to previous menu (*)
 prompt 
@@ -34,6 +35,12 @@ begin
                                               'notavailable.sql'),
          2, decode (substr('&1', 1, 2), '12', 'mt/cdatabaseproperties121.sql',
                                               'notavailable.sql'),
+
+         3, decode ('&1', '12.1.0.1', 'mt/pdb12101.sql',
+                    decode (substr('&1', 1, 2),
+                            '12', 'mt/pdb12102.sql',
+                            'notavailable.sql')
+                   ),
          0, 'odstart.sql',
          'odstart.sql')
     into :category_menu
