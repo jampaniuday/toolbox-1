@@ -13,6 +13,10 @@ Oradistrict Toolbox - List all containers in CDB.
 
 start mt/containerfmt.sql
 
+prompt
+prompt Key for column names
+prompt CID - Container ID
+
 select con_id, name, dbid, round(total_size/1024/1024,2) total_size,
        open_mode, to_char(open_time, 'YYYY-MM-DD HH24:MI:SS') open_time,
        restricted

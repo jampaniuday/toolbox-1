@@ -17,6 +17,7 @@ prompt
 prompt Key for column names
 prompt FL - force logging
 prompt FnL - force nologging
+prompt CID - Container ID
 
 select con_id, pdb_name, status, logging, force_logging, force_nologging
   from dba_pdbs

@@ -13,6 +13,10 @@ Oradistrict Toolbox - List all pluggable databases in CDB.
 
 start mt/pdbfmt.sql
 
+prompt
+prompt Key for column names
+prompt CID - Container ID
+
 select con_id, pdb_name, status
   from dba_pdbs
  order by 1;

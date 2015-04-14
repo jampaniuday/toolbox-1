@@ -3,7 +3,7 @@
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
 Tested on:      11.2.0.4.0, 12.1.0.2.0
-Last date:      2015-04-12
+Last date:      2015-04-13
 File name:      odstart.sql
 
 Description:
