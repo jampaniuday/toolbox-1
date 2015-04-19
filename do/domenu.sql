@@ -18,6 +18,7 @@ prompt Chose report:
 prompt 
 prompt 1)  Objects
 prompt 2)  Constraints
+prompt 3)  Directories
 prompt 
 prompt 0)  back to previous menu (*)
 prompt 
@@ -32,6 +33,7 @@ begin
   select decode (&acc_choice,
          1, 'do/object112.sql',
          2, 'do/constraint112.sql',
+         3, 'do/directory112.sql',
          0, 'odstart.sql',
          'odstart.sql')
     into :category_menu
