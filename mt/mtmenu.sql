@@ -19,6 +19,7 @@ prompt
 prompt 1)  containers
 prompt 2)  containers database properties
 prompt 3)  containers (status and logging)
+prompt 4)  users
 prompt 
 prompt 0)  back to previous menu (*)
 prompt 
@@ -41,6 +42,8 @@ begin
                             '12', 'mt/pdb12102.sql',
                             'notavailable.sql')
                    ),
+         4, decode (substr('&1', 1, 2), '12', 'mt/cusers121.sql',
+                                              'notavailable.sql'),
          0, 'odstart.sql',
          'odstart.sql')
     into :category_menu
