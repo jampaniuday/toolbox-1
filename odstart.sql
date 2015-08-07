@@ -9,7 +9,12 @@ File name:      odstart.sql
 Description:
 Oradistrict Toolbox - Startup script
 
+Note:
+Due to recursive execution limited to 20 scripts in sql*plus I'm leaving
+this project behind and going for another one with one way option only.
+
 */
+
 
 clear screen
 
