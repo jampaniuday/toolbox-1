@@ -1,1 +1,1 @@
-exit
+prompt Bye!

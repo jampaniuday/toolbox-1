@@ -3,7 +3,7 @@
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
 Tested on:      12.1.0.2.0
-Last date:      2015-04-14
+Last date:      2015-08-11
 File name:      directory112.sql
 
 Description:
@@ -21,4 +21,4 @@ prompt
 prompt (hit enter to continue)
 pause
 
-start do/domenu.sql
+start ex.sql

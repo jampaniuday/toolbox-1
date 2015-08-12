@@ -3,7 +3,7 @@
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
 Tested on:      12.1.0.2.0
-Last date:      2015-04-13
+Last date:      2015-08-11
 File name:      cdatabaseproperties121.sql
 
 Description:
@@ -51,4 +51,4 @@ prompt
 prompt (hit enter to continue)
 pause
 
-start mt/mtmenu.sql
+start ex.sql

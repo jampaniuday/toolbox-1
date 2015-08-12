@@ -3,7 +3,7 @@
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
 Tested on:      11.2.0.4.0
-Last date:      2015-03-16
+Last date:      2015-08-11
 File name:      database112.sql
 
 Description:
@@ -41,4 +41,4 @@ prompt
 prompt (hit enter to continue)
 pause
 
-start iad/iadmenu.sql
+start ex.sql

@@ -3,7 +3,7 @@
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
 Tested on:      12.1.0.2.0
-Last date:      2015-04-12
+Last date:      2015-05-11
 File name:      domenu.sql
 
 Description:
@@ -20,7 +20,7 @@ prompt 1)  Objects
 prompt 2)  Constraints
 prompt 3)  Directories
 prompt 
-prompt 0)  back to previous menu (*)
+prompt 0)  exit (*)
 prompt 
 prompt Default value always with (*)
 
@@ -34,8 +34,8 @@ begin
          1, 'do/object112.sql',
          2, 'do/constraint112.sql',
          3, 'do/directory112.sql',
-         0, 'odstart.sql',
-         'odstart.sql')
+         0, 'ex.sql',
+         'ex.sql')
     into :category_menu
     from dual;
 end;

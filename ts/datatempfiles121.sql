@@ -1,10 +1,9 @@
 /*
 
-
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
 Tested on:      12.1.0.2.0
-Last date:      2015-03-25
+Last date:      2015-08-11
 File name:      datatempfiles121.sql
 
 Description:
@@ -38,4 +37,4 @@ prompt
 prompt (hit enter to continue)
 pause
 
-start ts/tsmenu.sql
+start ex.sql

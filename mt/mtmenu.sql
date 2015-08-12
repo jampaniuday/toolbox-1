@@ -3,7 +3,7 @@
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
 Tested on:      12.1.0.2.0
-Last date:      2015-04-12
+Last date:      2015-05-11
 File name:      mtmenu.sql
 
 Description:
@@ -21,7 +21,7 @@ prompt 2)  containers database properties
 prompt 3)  containers (status and logging)
 prompt 4)  users
 prompt 
-prompt 0)  back to previous menu (*)
+prompt 0)  exit (*)
 prompt 
 prompt Default value always with (*)
 
@@ -44,8 +44,8 @@ begin
                    ),
          4, decode (substr('&1', 1, 2), '12', 'mt/cusers121.sql',
                                               'notavailable.sql'),
-         0, 'odstart.sql',
-         'odstart.sql')
+         0, 'ex.sql',
+         'ex.sql')
     into :category_menu
     from dual;
 end;

@@ -3,7 +3,7 @@
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
 Tested on:      12.1.0.2.0
-Last date:      2015-03-16
+Last date:      2015-08-11
 File name:      instance121.sql
 
 Description:
@@ -28,4 +28,4 @@ prompt
 prompt (hit enter to continue)
 pause
 
-start iad/iadmenu.sql
+start ex.sql

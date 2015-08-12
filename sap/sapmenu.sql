@@ -18,7 +18,7 @@ prompt Chose report:
 prompt 
 prompt 1)  my session - basic information
 prompt 
-prompt 0)  back to previous menu (*)
+prompt 0)  exit (*)
 prompt 
 prompt Default value always with (*)
 
@@ -31,8 +31,8 @@ begin
   select decode (&acc_choice,
          1, decode (substr('&1', 1, 2), '12', 'sap/mysession121.sql',
                                               'sap/mysession112.sql'),
-         0, 'odstart.sql',
-         'odstart.sql')
+         0, 'ex.sql',
+         'ex.sql')
     into :category_menu
     from dual;
 end;

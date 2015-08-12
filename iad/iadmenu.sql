@@ -25,7 +25,7 @@ prompt 4)  specified parameter
 --prompt 6)  long session operations (v$session_longops)
 --prompt 7)  
 prompt 
-prompt 0)  back to previous menu (*)
+prompt 0)  exit (*)
 prompt 
 prompt Default value always with (*)
 
@@ -55,8 +55,8 @@ begin
 --                                                'iad/databaseproperties112.sql'),
          4, decode (substr('&1', 1, 4), '12.1', 'iad/parameter121.sql',
                                                 'iad/parameter112.sql'),
-         0, 'odstart.sql',
-         'odstart.sql')
+         0, 'ex.sql',
+         'ex.sql')
     into :category_menu
     from dual;
 end;

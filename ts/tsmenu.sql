@@ -17,10 +17,10 @@ prompt
 prompt Chose report:
 prompt 
 prompt 1)  tablespaces with data and temp files
-prompt   -> add seed datafiles based on v$tablespace and v$datafile
+-- do not add - only in mt menu! prompt   -> add seed datafiles based on v$tablespace and v$datafile
 --prompt 2)  
 prompt 
-prompt 0)  back to previous menu (*)
+prompt 0)  exit (*)
 prompt 
 prompt Default value always with (*)
 
