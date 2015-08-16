@@ -20,6 +20,7 @@ prompt 1)  containers
 prompt 2)  containers database properties
 prompt 3)  containers (status and logging)
 prompt 4)  users
+prompt 5)  users with IDs
 prompt 
 prompt 0)  exit (*)
 prompt 
@@ -43,6 +44,8 @@ begin
                             'notavailable.sql')
                    ),
          4, decode (substr('&1', 1, 2), '12', 'mt/cusers121.sql',
+                                              'notavailable.sql'),
+         5, decode (substr('&1', 1, 2), '12', 'mt/cusersonm121.sql',
                                               'notavailable.sql'),
          0, 'ex.sql',
          'ex.sql')
