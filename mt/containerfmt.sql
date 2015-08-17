@@ -14,7 +14,7 @@ Oradistrict Toolbox - List all containers in CDB - reformatting output.
 set heading on
 
 col con_id for 999 hea 'CID'
-col name for a20 wrap
+col name for a20 hea 'Container name' wrap
 col dbid for 99999999999 hea 'DbID' wrap
 col total_size for 999999999 hea 'Size in MB'
 col open_mode for a10 hea 'Open mode'
