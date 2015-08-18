@@ -20,9 +20,10 @@ prompt 1)  containers
 prompt 2)  containers database properties
 prompt 3)  containers (status and logging)
 prompt 4)  users
-prompt 5)  users with IDs
-prompt 6)  objects owned by pointed user 
-prompt 7)  tables owned by pointed user
+prompt 5)  users with IDs (only non-Oracle managed)
+prompt 6)  users with IDs (only non-Oracle managed and local)
+prompt 7)  objects owned by pointed user 
+prompt 8)  tables owned by pointed user
 prompt 
 prompt 0)  exit (*)
 prompt 
@@ -49,9 +50,11 @@ begin
                                               'notavailable.sql'),
          5, decode (substr('&1', 1, 2), '12', 'mt/cusersonm121.sql',
                                               'notavailable.sql'),
-         6, decode (substr('&1', 1, 2), '12', 'mt/cobject121.sql',
+         6, decode (substr('&1', 1, 2), '12', 'mt/cusersonml121.sql',
                                               'notavailable.sql'),
-         7, decode (substr('&1', 1, 2), '12', 'mt/ctable121.sql',
+         7, decode (substr('&1', 1, 2), '12', 'mt/cobject121.sql',
+                                              'notavailable.sql'),
+         8, decode (substr('&1', 1, 2), '12', 'mt/ctable121.sql',
                                               'notavailable.sql'),
          0, 'ex.sql',
          'ex.sql')

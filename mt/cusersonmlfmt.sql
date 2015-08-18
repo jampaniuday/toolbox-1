@@ -3,11 +3,11 @@
 Author:         Patrycjusz Konkol
 Contact:        patrycjusz\\@//oradistrict.com --please remove //\\
 Tested on:      12.1.0.2.0
-Last date:      2015-08-16
-File name:      cusersonmfmt.sql
+Last date:      2015-08-18
+File name:      cusersonmlfmt.sql
 
 Description:
-Oradistrict Toolbox - List all users in CDB excluding system users
+Oradistrict Toolbox - List all users in CDB excluding common and system users
 - reformatting output.
 
 */
