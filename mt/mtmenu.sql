@@ -24,7 +24,8 @@ prompt 5)  users with IDs (only non-Oracle managed)
 prompt 6)  users with IDs (only non-Oracle managed and local)
 prompt 7)  objects owned by pointed user 
 prompt 8)  tables owned by pointed user
-prompt 9)  privileges and roles granted to user
+prompt 9)  privileges and roles granted to specified user (or another role)
+prompt 10) privileges and roles granted to specified role
 prompt 
 prompt 0)  exit (*)
 prompt 
@@ -58,6 +59,8 @@ begin
          8, decode (substr('&1', 1, 2), '12', 'mt/ctable121.sql',
                                               'notavailable.sql'),
          9, decode (substr('&1', 1, 2), '12', 'mt/cprivilege121.sql',
+                                              'notavailable.sql'),
+         10, decode (substr('&1', 1, 2), '12', 'mt/crole121.sql',
                                               'notavailable.sql'),
          0, 'ex.sql',
          'ex.sql')
