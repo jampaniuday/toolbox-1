@@ -26,6 +26,7 @@ prompt 7)  objects owned by pointed user
 prompt 8)  tables owned by pointed user
 prompt 9)  privileges and roles granted to specified user (or another role)
 prompt 10) privileges and roles granted to specified role
+prompt 11) container data granted to common users
 prompt 
 prompt 0)  exit (*)
 prompt 
@@ -61,6 +62,8 @@ begin
          9, decode (substr('&1', 1, 2), '12', 'mt/cprivilege121.sql',
                                               'notavailable.sql'),
          10, decode (substr('&1', 1, 2), '12', 'mt/crole121.sql',
+                                              'notavailable.sql'),
+         11, decode (substr('&1', 1, 2), '12', 'mt/cdata121.sql',
                                               'notavailable.sql'),
          0, 'ex.sql',
          'ex.sql')
